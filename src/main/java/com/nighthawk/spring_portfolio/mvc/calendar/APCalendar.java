@@ -33,22 +33,19 @@ public class APCalendar {
     */
     static int firstDayOfYear(int year) {
 
-        int leap, common, totaldays, day;
+        int leap;
+        int regular;
+        int totalDays; 
+        int day; 
+        year = (year - 1) - 1899; //1899 is a sunday
 
-        // Count years between 
-        year = (year - 1) - 1899; //1899 - starts on a Sunday
-
-        // Count leap years
         leap = year / 4;
 
-        // Common (non leap) years
-        common = year - leap;
+        regular = year - leap;
 
-        // Total number of days in the years lying between the years
-        totaldays = (common * 365) + (leap * 366) + 1;
+        totalDays = (regular * 365) + (leap * 366) + 1;
 
-        // Actual day
-        day = (totaldays % 7);
+        day = (totalDays % 7);
 
         return day;
     }
