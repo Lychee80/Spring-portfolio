@@ -30,7 +30,7 @@ public class Calculator {
         OPERATORS.put("%", 3);
         OPERATORS.put("+", 4);
         OPERATORS.put("-", 4);
-        OPERATORS.put("^", 1);
+        OPERATORS.put("^", 4);
     }
 
     // Helper definition for supported operators
@@ -94,6 +94,10 @@ public class Calculator {
         return (OPERATORS.get(token1) - OPERATORS.get(token2) >= 0);
     }
 
+    private void empty(){
+        
+    }
+
     // Term Tokenizer takes original expression and converts it to ArrayList of
     // tokens
     private void termTokenizer() {
@@ -128,6 +132,7 @@ public class Calculator {
             tokens.add(this.expression.substring(start));
         }
     }
+
 
     // Takes tokens and converts to Reverse Polish Notation (RPN), this is one where
     // the operator follows its operands.

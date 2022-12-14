@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/calculator")
 public class CalculatorApiController {
     @GetMapping("/start")
-    public ResponseEntity<String> Calculator(@RequestBody  String expression) {
+    public ResponseEntity<String> Calculator(@RequestBody String expression) {
         try {
             Calculator calculation = new Calculator(expression);
             return new ResponseEntity<>(calculation.toString(), HttpStatus.ACCEPTED);
