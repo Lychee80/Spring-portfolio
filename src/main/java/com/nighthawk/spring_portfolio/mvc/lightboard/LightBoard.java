@@ -118,13 +118,8 @@ public class LightBoard {
 		return outString;
     }
 
-    public void lightToggle(int row, int col) {
-        if (lights[row][col].isOn()) {
-            lights[row][col].setOn(false);
-        }
-        else {
-            lights[row][col].setOn(true);
-        }
+    public void turnOff(int row, int col) {
+        lights[row][col].setOn(false);
     }
 
     public void allOn() {
@@ -135,7 +130,7 @@ public class LightBoard {
         }
     }
 
-    public void setColor(int row, int col, short r, short g, short b) {
+    public void Color(int row, int col, short r, short g, short b) {
         lights[row][col].setRGB(r,g,b);
     }
     
@@ -150,8 +145,13 @@ public class LightBoard {
         lightBoard.allOn();
         System.out.println(lightBoard.toColorPalette());
         System.out.println("Turned off light in row 1 column 4");
-        lightBoard.lightToggle(1, 4);
+        lightBoard.turnOff(1, 4);
         System.out.println(lightBoard.toColorPalette());
+        System.out.println("Turn the first light to the color pink");
+        short r=255; short g =204; short b =255;
+        lightBoard.Color(0,0,r,g,b);
+        System.out.println(lightBoard.toColorPalette());
+       
        
     }
 }
