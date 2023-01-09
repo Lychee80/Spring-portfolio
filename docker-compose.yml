@@ -4,7 +4,7 @@ services:
     image: t2_spring_8192
     build: .
     ports:
-      - "8192:8085"
+      - "8085:8192"
     volumes:
       - persistent_volume:/app/volumes
     restart: unless-stopped
