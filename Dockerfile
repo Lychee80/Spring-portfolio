@@ -4,7 +4,6 @@ WORKDIR /app
 RUN apk update && apk upgrade && \
     apk add --no-cache git 
 COPY . /app
-RUN git clone https://github.com/Lychee80/t2_spring_8192.git /app
 RUN ./mvnw package
 CMD ["java", "-jar", "target/spring-0.0.1-SNAPSHOT.jar"]
 EXPOSE 8192
