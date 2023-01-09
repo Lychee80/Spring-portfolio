@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: team2portfolio
+    image: T2_spring_T8192
     build: .
     ports:
       - "8192:8192"
